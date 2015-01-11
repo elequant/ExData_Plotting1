@@ -6,7 +6,7 @@
 # author:   Elequant
 # =============================================================================
 
-Sys.setlocale("LC_TIME", "en_US.UTF-8")
+Sys.setlocale("LC_TIME", "en_US.UTF-8") 
 
 # =============================================================================
 # Pre-Step: Download and extract the zipped data archive if the data set is not 
@@ -64,8 +64,15 @@ getRelevantSubset <- function(){
 # Making plot 3
 # =============================================================================
 plot3 <- function(data){
-  png(file = "plot3.png", 
+  # to provide figures with a transparent background as found on roger peng's 
+  # repository the parameter bg="transparent" for the function png() could be
+  # used. I chose the default value ("white") because 
+  # 1) a solid white background makes it easier to assess the plot
+  # 2) the reference plots are the figures shown on the "Peer Assessments
+  # / Course Project 1" page on coursera.org
+  png(file = "plot1.png", 
       width = 480, height = 480, units = "px")
+  #   width = 480, height = 480, units = "px", bg="transparent")
   
   plot(  
     data$Time, data$Sub_metering_1,
